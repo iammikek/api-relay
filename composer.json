@@ -9,6 +9,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "jms/serializer-bundle": "^2.4",
         "sensio/framework-extra-bundle": "^5.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/console": "*",
         "symfony/dotenv": "*",
         "symfony/flex": "^1.1",
