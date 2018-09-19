@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as FOSRest;
@@ -23,29 +23,6 @@ use GuzzleHttp\Psr7\Request as GuzzleRequest;
  */
 class StationController extends Controller
 {
-
-
-    /**
-     * @Route("/")
-     */
-    public function homepage()
-    {
-
-        return new Response('A U T O M I C A . A P I');
-
-    }
-
-
-    /**
-     * @Route("/api/")
-     */
-    public function api_landingAction()
-    {
-
-        return new Response('A U T O M I C A . A P I . L A N D I N G');
-
-    }
-
 
     /**
      * @FOSRest\Get("/stations")
