@@ -38,7 +38,6 @@ class StationControllerTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
-
         $this->assertTrue(
             $client->getResponse()->headers->contains(
                 'Content-Type',
