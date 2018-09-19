@@ -30,7 +30,7 @@ class StationController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getStationsAction()
+    public function stations()
     {
         return $this->getAdmiraltyData('Stations');
     }
@@ -44,7 +44,7 @@ class StationController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function showAction($stationId)
+    public function station($stationId)
     {
         return $this->getAdmiraltyData('Stations/' . $stationId);
     }
@@ -59,7 +59,7 @@ class StationController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function showEventsAction($station, $duration = 1)
+    public function showEvent($station, $duration = 1)
     {
         return $this->getAdmiraltyData('Stations/' . $station . '/TidalEvents?duration=' . $duration);
     }

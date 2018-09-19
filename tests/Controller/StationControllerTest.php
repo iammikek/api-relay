@@ -10,6 +10,8 @@ class StationControllerTest extends WebTestCase
 
 
     /**
+     * @param $url
+     *
      * @dataProvider provideUrls
      */
     public function testPageIsSuccessful($url)
@@ -28,8 +30,6 @@ class StationControllerTest extends WebTestCase
             ),
             'the "Content-Type" header is "application/json"' // optional message shown on failure
         );
-
-
     }
 
     public function provideUrls()

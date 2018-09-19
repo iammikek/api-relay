@@ -13,11 +13,13 @@ class ArticleControllerTest extends WebTestCase
     {
         return [
             ['/', 'A U T O M I C A'],
-            ['/api', 'A U T O M I C A. A P I'],
+            ['/api', 'A U T O M I C A . A P I'],
         ];
     }
 
     /**
+     * @param $url
+     *
      * @dataProvider provideUrls
      */
     public function testPageIsSuccessful($url)
@@ -28,7 +30,11 @@ class ArticleControllerTest extends WebTestCase
         $this->assertTrue($client->getResponse()->isSuccessful());
     }
 
+
     /**
+     * @param $url
+     * @param $text
+     *
      * @dataProvider provideUrls
      */
     public function testTextExists($url, $text)
@@ -40,7 +46,7 @@ class ArticleControllerTest extends WebTestCase
 
         $this->assertGreaterThan(
             0,
-            $crawler->filter('html:contains("A U T O M I C A")')->count()
+            $crawler->filter('html:contains("'.$text.'")')->count()
         );
     }
 }

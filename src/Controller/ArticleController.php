@@ -30,8 +30,8 @@ class ArticleController extends Controller
     /**
      * @Route("/api")
      */
-    public function apiAction()
+    public function api()
     {
-        return new Response('A U T O M I C A. A P I');
+        return new Response('A U T O M I C A . A P I');
     }
 }
