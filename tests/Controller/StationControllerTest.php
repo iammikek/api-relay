@@ -9,12 +9,15 @@ class StationControllerTest extends WebTestCase
 {
 
 
-    public function testGetStationsAction()
+    /**
+     * @dataProvider provideUrls
+     */
+    public function testPageIsSuccessful($url)
     {
+        $client = self::createClient();
+        $client->request('GET', $url);
 
-        $client = static::createClient();
-
-        $client->request('GET', '/api/V1/stations');
+        $this->assertTrue($client->getResponse()->isSuccessful());
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
@@ -26,44 +29,16 @@ class StationControllerTest extends WebTestCase
             'the "Content-Type" header is "application/json"' // optional message shown on failure
         );
 
+
     }
 
-
-    public function testShowAction()
+    public function provideUrls()
     {
-
-        $client = static::createClient();
-
-        $client->request('GET', '/api/V1/stations/0001');
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-
-        $this->assertTrue(
-            $client->getResponse()->headers->contains(
-                'Content-Type',
-                'application/json'
-            ),
-            'the "Content-Type" header is "application/json"' // optional message shown on failure
-        );
-
+        return [
+            ['/api/V1/stations'],
+            ['/api/V1/stations/0001'],
+            ['/api/V1/stations/0001/events'],
+        ];
     }
 
-
-    public function testShowEventsAction()
-    {
-        $client = static::createClient();
-
-        $client->request('GET', '/api/V1/stations/0001/events');
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-
-        $this->assertTrue(
-            $client->getResponse()->headers->contains(
-                'Content-Type',
-                'application/json'
-            ),
-            'the "Content-Type" header is "application/json"' // optional message shown on failure
-        );
-
-    }
 }
