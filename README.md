@@ -5,3 +5,7 @@ docker
 phpunit
 - php bin/console server:start
 - php ./vendor/bin/simple-phpunit
+
+
+yarn
+- yarn encore dev --watch

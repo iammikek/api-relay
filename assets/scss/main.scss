@@ -1,12 +1,150 @@
+@font-face {
+  font-family: 'GreatLakes';
+  src: url('../fonts/GreatLakes.woff') format('woff')
+}
+
+@import url('https://fonts.googleapis.com/css?family=Gafata');
+
+@import "_colors";
+@import "_fonts";
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration-color: $black-olive;
+    text-decoration: underline;
+  }
+}
+
 body {
+  font-family: 'GreatLakes', Arial, sans-serif;
+  background: $floral-white;
+  color: $raisin-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: .05em;
+  flex-direction: column;
+  height: 80%
+}
 
-  h1 {
-    color: red
+footer {
+  text-align: center;
+  font-family: 'Gafata', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: fixed;
+  bottom: 10px;
+  a {
+    color: $pale-silver;
+    &:hover {
+      color: darken($pale-silver, 50);
+    }
+  }
+}
+
+#outer {
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 5px 0;
+  min-height: 100px;
+  width: 100%;
+
+  h2 {
+    font-family: GreatLakes, sans-serif;
+  }
+}
+
+.slide {
+  font-size: $small;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    a {
+      margin: 0;
+      color: $pale-silver;
+
+      &:hover {
+        text-decoration-color: $black-olive
+      }
+    }
+  }
+}
+
+.content {
+  font-family: 'Gafata', sans-serif;
+  color: $black-olive;
+  p {
+    margin: 4px 0;
+    letter-spacing: normal;
+  }
+}
+
+.pagination {
+  width: 40px;
+  font-family: 'Gafata', sans-serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 0 auto;
+
+  div {
+    display: block;
+    width: 50%;
+
+    &.next {
+      text-align: right;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-blink: adjust_color($black-olive, 40);
+        color: $black-olive
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  html, body {
+    font-size: 20px;
+
+    #outer {
+      max-width: 380px;
+    }
   }
 
+}
 
-  .foo {
-    color: #FFF;
+#swapi {
+  li {
+    display: inline;
+    padding-right: 20px;
   }
+}
 
+dl {
+  display: flex;
+  flex-direction: column;
+  dt {
+
+  }
 }
