@@ -22,7 +22,7 @@ class StationControllerTest extends WebTestCase
             $url,
             [],
             [],
-            ['HTTP_X-AUTH-TOKEN' => 'IBLESCET']
+            ['HTTP_X-AUTH-TOKEN' => getenv('APP_SECURITY_TOKEN')]
         );
 
         $this->assertTrue($client->getResponse()->isSuccessful());

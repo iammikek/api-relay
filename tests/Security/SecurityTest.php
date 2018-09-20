@@ -26,10 +26,10 @@ class SecurityTest extends WebTestCase
             '/api',
             [],
             [],
-            ['X-AUTH-TOKEN' => 'FAKE']
+            ['HTTP_X-AUTH-TOKEN' => 'FAKE']
         );
 
-        $this->assertEquals($client->getResponse()->getStatusCode(), 401);
+        $this->assertEquals($client->getResponse()->getStatusCode(), 403);
     }
 
 
@@ -42,7 +42,7 @@ class SecurityTest extends WebTestCase
             '/api',
             [],
             [],
-            ['HTTP_X-AUTH-TOKEN' => $_SERVER['APP_ENV']]
+            ['HTTP_X-AUTH-TOKEN' => getenv('APP_SECURITY_TOKEN')]
         );
 
         $this->assertEquals($client->getResponse()->getStatusCode(), 200);

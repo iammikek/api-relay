@@ -24,7 +24,15 @@ class ArticleController extends Controller
      */
     public function homepage()
     {
-        return new Response('A U T O M I C A');
+        $title = "A U T O M I C A";
+        $body = '';
+
+
+        return $this->render('article/show.html.twig', [
+            'title' => ucwords(str_replace('-', ' ', $title)),
+            'body' => $body
+        ]);
+
     }
 
     /**
