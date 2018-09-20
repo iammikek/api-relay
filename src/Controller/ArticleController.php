@@ -27,7 +27,6 @@ class ArticleController extends Controller
         $title = "A U T O M I C A";
         $body = '';
 
-
         return $this->render('article/show.html.twig', [
             'title' => ucwords(str_replace('-', ' ', $title)),
             'body' => $body
