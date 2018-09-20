@@ -1,0 +1,27 @@
+# config/packages/security.yaml
+security:
+    # ...
+    providers:
+        your_db_provider:
+            entity:
+                class: App\Entity\User
+                property: apiKey
+
+    access_control:
+        - { path: ^/api, roles: ROLE_USER }
+
+    firewalls:
+
+        main:
+            anonymous: ~
+            logout: ~
+
+            guard:
+                authenticators:
+                    - App\Security\TokenAuthenticator
+
+            # if you want, disable storing the user in the session
+            # stateless: true
+
+            # maybe other things, like form_login, remember_me, etc
+            # ...
