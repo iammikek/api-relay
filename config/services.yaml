@@ -32,3 +32,7 @@ services:
 
     sensio_framework_extra.view.listener:
         alias: Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener
+
+    api_key_authenticator:
+        class: App\Security\TokenAuthenticator
+        arguments: ["@router"]

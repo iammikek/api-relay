@@ -8,6 +8,7 @@
     "friendsofsymfony/rest-bundle": "^2.4",
     "guzzlehttp/guzzle": "^6.3",
     "jms/serializer-bundle": "^2.4",
+    "nelmio/cors-bundle": "^1.5",
     "sensio/framework-extra-bundle": "^5.2",
     "symfony/apache-pack": "^1.0",
     "symfony/console": "*",
@@ -15,14 +16,18 @@
     "symfony/flex": "^1.1",
     "symfony/framework-bundle": "*",
     "symfony/orm-pack": "^1.0",
-    "symfony/yaml": "*",
-    "nelmio/cors-bundle": "^1.5"
+    "symfony/security": "*",
+    "symfony/security-bundle": "*",
+    "symfony/security-guard": "*",
+    "symfony/yaml": "*"
   },
   "require-dev": {
     "symfony/browser-kit": "*",
     "symfony/css-selector": "*",
+    "symfony/maker-bundle": "^1.7",
     "symfony/phpunit-bridge": "*",
-    "symfony/test-pack": "^1.0"
+    "symfony/test-pack": "^1.0",
+    "symfony/web-server-bundle": "*"
   },
   "config": {
     "preferred-install": {

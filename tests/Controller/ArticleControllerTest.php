@@ -12,8 +12,7 @@ class ArticleControllerTest extends WebTestCase
     public function provideUrls()
     {
         return [
-            ['/', 'A U T O M I C A'],
-            ['/api', 'A U T O M I C A . A P I'],
+            ['/', 'A U T O M I C A']
         ];
     }
 

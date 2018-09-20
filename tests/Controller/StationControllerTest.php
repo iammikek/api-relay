@@ -17,7 +17,13 @@ class StationControllerTest extends WebTestCase
     public function testPageIsSuccessful($url)
     {
         $client = self::createClient();
-        $client->request('GET', $url);
+        $client->request(
+            'GET',
+            $url,
+            [],
+            [],
+            ['HTTP_X-AUTH-TOKEN' => 'IBLESCET']
+        );
 
         $this->assertTrue($client->getResponse()->isSuccessful());
 
