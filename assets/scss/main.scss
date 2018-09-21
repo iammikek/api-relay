@@ -1,5 +1,7 @@
 @font-face {
   font-family: 'GreatLakes';
+  font-weight: normal;
+  font-style: normal;
   src: url('../fonts/GreatLakes.woff') format('woff')
 }
 
@@ -29,8 +31,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 5px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   letter-spacing: .05em;
   flex-direction: column;
   height: 80%
@@ -63,6 +63,7 @@ footer {
 
   h2 {
     font-family: GreatLakes, sans-serif;
+    font-weight: normal;
   }
 }
 
