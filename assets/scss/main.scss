@@ -33,7 +33,11 @@ body {
   padding: 5px;
   letter-spacing: .05em;
   flex-direction: column;
-  height: 80%
+  height: 80%;
+
+  h1 {
+    font-weight: normal;
+  }
 }
 
 footer {
